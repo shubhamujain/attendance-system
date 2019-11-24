@@ -1,7 +1,5 @@
 # attendance-system
 
-# attendance-system
-
 1. Installation
 2. About
 3. Setup
