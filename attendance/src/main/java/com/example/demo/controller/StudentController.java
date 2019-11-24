@@ -43,12 +43,6 @@ public class StudentController {
 		return new ResponseEntity<Student>(entity, new HttpHeaders(), HttpStatus.OK);
 	}
 
-	@PostMapping
-	public ResponseEntity<Student> createOrUpdateStudent(Student student) throws RecordNotFoundException {
-		Student updated = studentService.createOrUpdateStudent(student);
-		return new ResponseEntity<Student>(updated, new HttpHeaders(), HttpStatus.OK);
-	}
-
 	@DeleteMapping("/{id}")
 	public HttpStatus deleteStudentById(@PathVariable("id") Integer id) throws RecordNotFoundException {
 		studentService.deleteStudentById(id);
