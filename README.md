@@ -37,4 +37,15 @@ Output
 	- Student's attendance records by his SID
 	- students attendance by date
 	
+Records By ID:
 
+![Screenshot (15)](https://user-images.githubusercontent.com/25982691/69494628-fa6c7b80-0ee3-11ea-99be-0f6a12602281.png)
+
+
+Records By Date:
+
+![Screenshot (16)](https://user-images.githubusercontent.com/25982691/69494637-1a9c3a80-0ee4-11ea-99ae-5250293d1fbb.png)
+
+![Screenshot (17)](https://user-images.githubusercontent.com/25982691/69494638-1a9c3a80-0ee4-11ea-983d-fab9a420f724.png)
+
+![Screenshot (18)](https://user-images.githubusercontent.com/25982691/69494639-1a9c3a80-0ee4-11ea-82db-63dbe0a0cfea.png)
