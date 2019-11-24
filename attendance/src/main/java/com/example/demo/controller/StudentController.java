@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,12 +40,6 @@ public class StudentController {
 		Student entity = studentService.getStudentById(id);
 		log.info("Student's Details by ID: " + entity);
 		return new ResponseEntity<Student>(entity, new HttpHeaders(), HttpStatus.OK);
-	}
-
-	@PostMapping
-	public ResponseEntity<Student> createOrUpdateStudent(Student student) throws RecordNotFoundException {
-		Student updated = studentService.createOrUpdateStudent(student);
-		return new ResponseEntity<Student>(updated, new HttpHeaders(), HttpStatus.OK);
 	}
 
 	@DeleteMapping("/{id}")

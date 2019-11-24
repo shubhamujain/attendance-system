@@ -49,25 +49,6 @@ public class StudentService {
 		}
 	}
 
-	public Student createOrUpdateStudent(Student entity) throws RecordNotFoundException {
-		Optional<Student> student = studentRepository.findById(entity.getId());
-
-		if (student.isPresent()) {
-			Student newEntity = student.get();
-			newEntity.setFirstName(entity.getFirstName());
-			newEntity.setLastName(entity.getLastName());
-			newEntity.setYear(entity.getYear());
-
-			newEntity = studentRepository.save(newEntity);
-
-			return newEntity;
-		} else {
-			entity = studentRepository.save(entity);
-
-			return entity;
-		}
-	}
-
 	public void deleteStudentById(Integer id) throws RecordNotFoundException {
 		Optional<Student> student = studentRepository.findById(id);
 
