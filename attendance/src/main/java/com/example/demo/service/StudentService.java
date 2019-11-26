@@ -56,6 +56,7 @@ public class StudentService {
 	public List<Student> detailsByDate(Date date) {
 		List<Student> studentList = studentRepository.findAll();
 		List<Student> studentListByDate = new ArrayList<>();
+		List<Student> finalStudentList = new ArrayList<>();
 		studentList.forEach(student -> {
 			List<Attendance> attendanceList = student.getAttendance();
 			List<Attendance> attendanceListByDate = new ArrayList<>();
@@ -73,11 +74,11 @@ public class StudentService {
 				}
 			});
 		});
-		for (int i = 0; i < studentListByDate.size()-1; i++) {
-			if (studentListByDate.get(i).equals(studentListByDate.get(i + 1))) {
-				studentListByDate.remove(i + 1);
+		for (Student student : studentListByDate) {
+			if (!finalStudentList.contains(student)) {
+				finalStudentList.add(student);
 			}
 		}
-		return studentListByDate;
+		return finalStudentList;
 	}
 }
