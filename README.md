@@ -49,3 +49,14 @@ Records By Date:
 ![Screenshot (17)](https://user-images.githubusercontent.com/25982691/69494638-1a9c3a80-0ee4-11ea-983d-fab9a420f724.png)
 
 ![Screenshot (18)](https://user-images.githubusercontent.com/25982691/69494639-1a9c3a80-0ee4-11ea-82db-63dbe0a0cfea.png)
+
+Approach to fix the issue:
+	- I checked the logs and analyzed my code.
+	- Then I itrated through my code(dry run) and found the exact issue.
+	- Followed below steps to fix the issue.
+
+Changes to fix the issue:
+	- was adding the student object to the list outside the if condition specified.
+	- viz. if (attendance.getAttendanceDate().equals(date) && student.getId().equals(attendance.getStudentId())) on line 65 of StudentService Class.
+	- so now adding the student object to list inside the if condition which is specified above.
+	- for avoiding duplicate records, written the for loop which is comparing the student object with whole list and if contains the student object already then does not add.
