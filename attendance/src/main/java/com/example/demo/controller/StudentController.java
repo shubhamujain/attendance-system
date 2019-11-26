@@ -51,6 +51,7 @@ public class StudentController {
 	@GetMapping("/attendance/{attendanceDate}")
 	public ResponseEntity<List<Student>> detailsByDate(@PathVariable("attendanceDate") Date date) {
 		List<Student> list = studentService.detailsByDate(date);
+		log.info("All Student's Details by date: " + list);
 		return new ResponseEntity<List<Student>>(list, new HttpHeaders(), HttpStatus.OK);
 	}
 }
