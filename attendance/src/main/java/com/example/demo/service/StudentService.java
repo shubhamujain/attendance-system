@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +20,6 @@ public class StudentService {
 
 	@Autowired
 	StudentRepository studentRepository;
-
-	@PersistenceContext
-	private EntityManager entityManager;
 
 	private Logger log = LoggerFactory.getLogger(StudentService.class);
 
@@ -74,11 +68,16 @@ public class StudentService {
 					log.info("Attendance List: " + attendanceListByDate);
 					student.setAttendance(attendanceListByDate);
 					log.info("Student object: " + student);
+					studentListByDate.add(student);
+					log.info("Student List: " + studentListByDate);
 				}
 			});
-			studentListByDate.add(student);
-			log.info("Student List: " + studentListByDate);
 		});
+		for (int i = 0; i < studentListByDate.size()-1; i++) {
+			if (studentListByDate.get(i).equals(studentListByDate.get(i + 1))) {
+				studentListByDate.remove(i + 1);
+			}
+		}
 		return studentListByDate;
 	}
 }
